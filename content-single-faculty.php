@@ -34,7 +34,7 @@ if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned
 	    				</div>
 	    				
 	    				<div class="officeEmail">
-	    					<?php the_field('email'); ?>
+	    					<a href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
 	    				</div>
 	    				
 	    				<div>

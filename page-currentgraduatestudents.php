@@ -6,13 +6,11 @@ Template Name: Current Graduate Students Page
 
 get_header(); ?>
 
-<div class="mobileScroll">
-<a href="#" class="mobileNavTriggerLarge" style="display: none;"></a>
-
-	<div id="main">
+<div id="main">
 
 		<div id="primary">
 		
+			<div id="content" class="fullWidth" role="main">
 			
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -97,9 +95,10 @@ echo $category[0]->slug; ?></div>
 
 				<?php endwhile; // end of the loop. ?>
 				
-			
-			<?php //get_sidebar(); ?>
+			</div><!-- #content -->
+			<?php get_sidebar(); ?>
 			<div class="clear"></div>
+			
 		</div><!-- #primary -->
 
 	</div>

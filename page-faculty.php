@@ -6,14 +6,13 @@ Template Name: Faculty Page
 
 get_header(); ?>
 
-<div class="mobileScroll">
-<a href="#" class="mobileNavTriggerLarge" style="display: none;"></a>
-
-	<div id="main">
+<div id="main">
 
 		<div id="primary">
 		
+			<div id="content" class="fullWidth facultyList" role="main">
 			
+
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -25,37 +24,35 @@ get_header(); ?>
 					$loop = new WP_Query( $args );
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 					
-						<div class="newsItem faculty">
-							<div class="previousa">
+						<div class="faculty">
 							
-								<div class="additionalContent">
+							
+								<div class="personPhoto">
     			
-    				
+								<a href="<?php the_permalink(); ?>">
     				
 				    				<?php 
 				    					
 					    				if ( has_post_thumbnail() ) {
 						    				
 						    				//the_post_thumbnail();
-						    				echo get_the_post_thumbnail($page->ID, 'large');
+						    				echo get_the_post_thumbnail($page->ID, 'medium');
 				 
-						    				} else {
+						    				} else { ?>
 				 
-											 //echo '<img src="';
-											 echo catch_that_image();
-											// echo '" alt="" />';
+											<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/avatarplaceholder.jpg" alt=" ">
 				
-										}
+										<?php }
 					    				
 				    				?>
 				
-				    			
+								</a>
 				    		</div>
 				    		
-				    		<div class="text">
-    			<div class="glyph"></div>
+				<div class="text">
+    			
     			<div class="titleheading">
-    			<h3><?php the_title(); ?></h3>
+    			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
     			<!--<div class="workingTitle"><?php the_field('working_title'); ?></div>-->
 				
     			
@@ -72,44 +69,36 @@ get_header(); ?>
 	    				</div>
 	    				
 	    				<div class="officeEmail">
-	    					<?php the_field('email'); ?>
+	    					<a href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
 	    				</div>
     				</div>
-	    		</div>
-			<?php //the_content_rss('', FALSE, '', 180); ?>
-    			
-    			
-    			
-    			<div class="dateheading">
-    			<?php //the_date(); ?>
+	    		
     			</div>
-    			<div class="hiddendate"><?php echo "-"; the_time('Ymd') ?></div>
-    			<div class="hiddengroup"><?php $category = get_the_category(); 
-echo $category[0]->slug; ?></div>
     			
+    			
+    			
+    			
+    			    			
 					
-					<span class="number">10</span>
+					
     		</div>
     		
-    		<a href="<?php the_permalink(); ?>" class="highlight">
-	    		<div class="loadingSpinner" style="display: none;">
-	    			<div class="progress" style="width:100%;"></div>
-	    		</div>
-    		</a>
+    		
 								
 								
 								
 								
 								
-							</div>
+							
 						</div>
 					<?php endwhile; ?>
 
 				<?php endwhile; // end of the loop. ?>
 				
-			
-			<?php //get_sidebar(); ?>
+		</div><!-- #content -->
+			<?php get_sidebar(); ?>
 			<div class="clear"></div>
+			
 		</div><!-- #primary -->
 
 	</div>
