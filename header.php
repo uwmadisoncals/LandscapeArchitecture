@@ -82,7 +82,8 @@
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" /> 
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_bloginfo('template_url'); ?>/master.css" />
+<!-- <link rel="stylesheet" type="text/css" media="all" href="<?php// echo get_bloginfo('template_url'); ?>/master.css" /> -->
+
 
 <!--[if IE]>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/ie.css" />
