@@ -67,7 +67,7 @@ get_header(); ?>
 
 	<?php endwhile; ?>
 <?php endif; ?>
-<?php restore_current_blog(); wp_reset_query(); ?>
+<?php wp_reset_query(); ?>
 							<a href="/news" class="moreButton">More News</a>
 
 
